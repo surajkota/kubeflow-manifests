@@ -16,6 +16,27 @@
 
 <!-- tocstop -->
 
+## Install RDS in Pipelines
+
+1. Make changes to the `params.env` and `secrets.env` in the following folders
+```
+./apps/pipeline/upstream/env/aws
+
+./apps/katib/upstream/installs/katib-external-db
+```
+
+2. Update the following file with your cluster name and install kubeflow using the the kfdef file at path
+```
+kfctl apply -V -f ./distributions/kfdef/kfctl_aws.v1.3.0.yaml
+```
+
+3. Once all pods are running, apply the katib db manager patch
+```
+cd ./apps/katib/upstream/installs/katib-external-db/
+
+kubectl apply -k ./
+```
+
 ## Overview
 
 This repo is owned by the [Manifests Working Group](https://github.com/kubeflow/community/blob/master/wg-manifests/charter.md).
