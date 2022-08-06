@@ -12,7 +12,7 @@
       "@type" : "WebSite",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https:\/\/awslabs.github.io\/kubeflow-manifests\/release-v1.4.1-aws-b1.0.0"
+           "@id": "https:\/\/surajkota.github.io\/kubeflow-manifests\/release-v1.4.1-aws-b1.0.0"
       },
       "articleSection" : "docs",
       "name" : "Prerequisites",
@@ -27,7 +27,7 @@
       "copyrightYear" : "0001",
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
-      "url" : "https:\/\/awslabs.github.io\/kubeflow-manifests\/release-v1.4.1-aws-b1.0.0\/docs\/deployment\/prerequisites\/",
+      "url" : "https:\/\/surajkota.github.io\/kubeflow-manifests\/release-v1.4.1-aws-b1.0.0\/docs\/deployment\/prerequisites\/",
       "wordCount" : "397",
       "keywords" : [ "Kubeflow" ]
   }
@@ -47,13 +47,13 @@
 <meta property="og:title" content="Prerequisites" />
 <meta property="og:description" content="Everything you need to get started with Kubeflow on AWS" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://awslabs.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/deployment/prerequisites/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://surajkota.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/deployment/prerequisites/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-06-27T18:30:55-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-08-06T01:45:25+00:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Prerequisites">
 <meta itemprop="description" content="Everything you need to get started with Kubeflow on AWS">
-<meta itemprop="dateModified" content="2022-06-27T18:30:55-07:00" />
+<meta itemprop="dateModified" content="2022-08-06T01:45:25+00:00" />
 <meta itemprop="wordCount" content="397">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Prerequisites"/>
@@ -120,6 +120,8 @@
 <div class="dropdown-menu dropdown-menu-md-right dropdown-menu-lg-left" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/docs">latest</a>
+	
+	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/release-v1.5.1-aws-b1.0.1/docs">v1.5</a>
 	
 	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs">v1.4</a>
 	
@@ -330,13 +332,13 @@
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="https://awslabs.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/">Documentation</a>
+    <a href="https://surajkota.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/">Documentation</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://awslabs.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/deployment/">Deployment</a>
+    <a href="https://surajkota.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/deployment/">Deployment</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://awslabs.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/deployment/prerequisites/">Prerequisites</a>
+    <a href="https://surajkota.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/deployment/prerequisites/">Prerequisites</a>
   </li>
   </ol>
 </nav>
@@ -377,7 +379,7 @@
 </ul>
 <h2 id="create-an-eks-cluster">Create an EKS cluster</h2>
 <blockquote>
-<p>Note: Be sure to check <a href="https://awslabs.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/about/eks-compatibility/">Amazon EKS and Kubeflow Compatibility</a> when creating your cluster with specific EKS versions.</p>
+<p>Note: Be sure to check <a href="https://surajkota.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/about/eks-compatibility/">Amazon EKS and Kubeflow Compatibility</a> when creating your cluster with specific EKS versions.</p>
 </blockquote>
 <p>If you do not have an existing cluster, run the following command to create an EKS cluster.</p>
 <blockquote>
@@ -404,9 +406,9 @@
 </span></span></code></pre></div><p>More details about cluster creation via <code>eksctl</code> can be found in the <a href="https://eksctl.io/usage/creating-and-managing-clusters/">Creating and managing clusters</a> guide.</p>
 <h2 id="clone-the-repository">Clone the repository</h2>
 <p>Clone the <a href="https://github.com/awslabs/kubeflow-manifests"><code>awslabs/kubeflow-manifests</code></a> and the <a href="https://github.com/kubeflow/manifests"><code>kubeflow/manifests</code></a> repositories and check out the release branches of your choosing.</p>
-<p>Substitute the value for <code>KUBEFLOW_RELEASE_VERSION</code>(e.g. v1.4.1) and <code>AWS_RELEASE_VERSION</code>(e.g. v1.4.1-aws-b1.0.0) with the tag or branch you want to use below. Read more about <a href="https://awslabs.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/about/releases/">releases and versioning</a> if you are unsure about what these values should be.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KUBEFLOW_RELEASE_VERSION</span><span class="o">=</span>&lt;&gt;
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">AWS_RELEASE_VERSION</span><span class="o">=</span>&lt;&gt;
+<p>Substitute the value for <code>KUBEFLOW_RELEASE_VERSION</code>(e.g. v1.4.1) and <code>AWS_RELEASE_VERSION</code>(e.g. v1.4.1-aws-b1.0.0) with the tag or branch you want to use below. Read more about <a href="https://surajkota.github.io/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/docs/about/releases/">releases and versioning</a> if you are unsure about what these values should be.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KUBEFLOW_RELEASE_VERSION</span><span class="o">=</span>v1.4.1
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">AWS_RELEASE_VERSION</span><span class="o">=</span>v1.4.1-aws-b1.0.1
 </span></span><span class="line"><span class="cl">git clone https://github.com/awslabs/kubeflow-manifests.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> kubeflow-manifests
 </span></span><span class="line"><span class="cl">git checkout <span class="si">${</span><span class="nv">AWS_RELEASE_VERSION</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl">git clone --branch <span class="si">${</span><span class="nv">KUBEFLOW_RELEASE_VERSION</span><span class="si">}</span> https://github.com/kubeflow/manifests.git upstream
@@ -414,7 +416,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified June 27, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/14689ddb343ced62b8a43577166a6fecc44b2e50">Remove root website build from 1.4 branch (#287) (14689dd)</a>
+  Last modified August 6, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/5b89d79267ac5a465bc639aa0db86d8e869cfe70">update latest website (5b89d79)</a>
 </div>
 
 </div>
@@ -474,7 +476,7 @@
 
 
 
-<script src="/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/js/main.min.a613a1017a181b6b38bb16e027be9fd11fa9d333c5f956d7ac93c4db2996016d.js" integrity="sha256-phOhAXoYG2s4uxbgJ76f0R&#43;p0zPF&#43;VbXrJPE2ymWAW0=" crossorigin="anonymous"></script>
+<script src="/kubeflow-manifests/release-v1.4.1-aws-b1.0.0/js/main.min.fa08dc70f18f0d9200ba15ab21307e1a4d6f34870d3c1ca019075fccf9f04fab.js" integrity="sha256-&#43;gjccPGPDZIAuhWrITB&#43;Gk1vNIcNPBygGQdfzPnwT6s=" crossorigin="anonymous"></script>
 
 
 
