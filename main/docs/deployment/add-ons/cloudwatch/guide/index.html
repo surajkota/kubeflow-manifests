@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/surajkota.github.io\/kubeflow-manifests\/main\/docs\/deployment\/add-ons\/cloudwatch\/guide\/",
-      "wordCount" : "343",
+      "wordCount" : "342",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://surajkota.github.io/kubeflow-manifests/main/docs/deployment/add-ons/cloudwatch/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-08-06T01:45:25+00:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-09-09T15:43:07-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="CloudWatch">
 <meta itemprop="description" content="Set up CloudWatch ContainerInsights on Amazon EKS">
-<meta itemprop="dateModified" content="2022-08-06T01:45:25+00:00" />
-<meta itemprop="wordCount" content="343">
+<meta itemprop="dateModified" content="2022-09-09T15:43:07-07:00" />
+<meta itemprop="wordCount" content="342">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CloudWatch"/>
 <meta name="twitter:description" content="Set up CloudWatch ContainerInsights on Amazon EKS"/>
@@ -62,8 +62,8 @@
 
 
 
-<link rel="preload" href="/kubeflow-manifests/main/scss/main.min.aaceb816a36445103bbac4366a50b9ace964e875d4fad1f72a147d79306e7865.css" as="style">
-<link href="/kubeflow-manifests/main/scss/main.min.aaceb816a36445103bbac4366a50b9ace964e875d4fad1f72a147d79306e7865.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/kubeflow-manifests/main/scss/main.min.da9a6963d4efb20122a519bd217b1a074d0a90730980b7ca4bfa051e80c00d93.css" as="style">
+<link href="/kubeflow-manifests/main/scss/main.min.da9a6963d4efb20122a519bd217b1a074d0a90730980b7ca4bfa051e80c00d93.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -379,7 +379,7 @@
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLUSTER_REGION</span><span class="o">=</span>&lt;&gt;
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">eksctl utils associate-iam-oidc-provider --region<span class="o">=</span><span class="nv">$CLUSTER_REGION</span> --cluster<span class="o">=</span><span class="nv">$CLUSTER_NAME</span> --approve
-</span></span><span class="line"><span class="cl">eksctl create iamserviceaccount --name cloudwatch-agent --namespace amazon-cloudwatch --cluster <span class="nv">$CLUSTER_NAME</span> --region <span class="nv">$CLUSTER_REGION</span> cloudwatch-agent --approve --override-existing-serviceaccounts --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
+</span></span><span class="line"><span class="cl">eksctl create iamserviceaccount --name cloudwatch-agent --namespace amazon-cloudwatch --cluster <span class="nv">$CLUSTER_NAME</span> --region <span class="nv">$CLUSTER_REGION</span> --approve --override-existing-serviceaccounts --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
 </span></span><span class="line"><span class="cl">eksctl create iamserviceaccount --name fluent-bit --namespace amazon-cloudwatch --cluster <span class="nv">$CLUSTER_NAME</span> --region <span class="nv">$CLUSTER_REGION</span> --approve --override-existing-serviceaccounts --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
 </span></span></code></pre></div><h2 id="install">Install</h2>
 <p>To install an optimized QuickStart configuration, enter the following command:</p>
@@ -410,7 +410,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified August 6, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/4f1c2ff274e625b0ff1e0ffac2c9834d3cca5e0d">update laatest website (4f1c2ff)</a>
+  Last modified September 9, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/26e4f2a10c47611707a7fdc22aed94aaa5cc91c7">Fix istio (#349) (26e4f2a)</a>
 </div>
 
 </div>
