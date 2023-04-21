@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/surajkota.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito-rds-s3\/guide-terraform\/",
-      "wordCount" : "780",
+      "wordCount" : "822",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://surajkota.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide-terraform/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-04-20T13:16:58-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2023-04-21T09:30:54-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Terraform Deployment Guide">
 <meta itemprop="description" content="Deploy Kubeflow with Cognito, RDS, and S3 using Terraform">
-<meta itemprop="dateModified" content="2023-04-20T13:16:58-07:00" />
-<meta itemprop="wordCount" content="780">
+<meta itemprop="dateModified" content="2023-04-21T09:30:54-07:00" />
+<meta itemprop="wordCount" content="822">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Terraform Deployment Guide"/>
 <meta name="twitter:description" content="Deploy Kubeflow with Cognito, RDS, and S3 using Terraform"/>
@@ -539,19 +539,6 @@
 </ul>
 </li>
 <li>
-<p>As of Kubeflow 1.7, there are two options for users to connect with S3 as backend.</p>
-<ol>
-<li>
-<p>[RECOMMENDED] IRSA which allows the use of AWS IAM permission boundaries at the Kubernetes pod level. A Kubernetes service account (SA) is associated with an IAM role with a role policy that scopes the IAM permissions (e.g. S3 read/write access, etc.). When a pod in the SA namespace is annotated with the SA name, EKS injects the IAM role ARN and a token is used to get the credentials so that the pod can make requests to AWS services within the scope of the role policy associated with the IRSA.
-For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">Amazon EKS IAM roles for service accounts</a>.</p>
-</li>
-<li>
-<p>Create an IAM user to use with the Minio Client</p>
-<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi">Create an IAM user</a> with permissions to get bucket locations and allow read and write access to objects in an S3 bucket where you want to store the Kubeflow artifacts. Take note of the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY of the IAM user that you created to use in the following step, which will be referenced as <code>TF_VAR_minio_aws_access_key_id</code> and <code>TF_VAR_minio_aws_secret_access_key</code> respectively.</p>
-</li>
-</ol>
-</li>
-<li>
 <p>Define the following environment variables:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Region to create the cluster in</span>
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLUSTER_REGION</span><span class="o">=</span>
@@ -575,6 +562,22 @@ For more information, see <a href="https://docs.aws.amazon.com/eks/latest/usergu
 <p>NOTE: Configure Load Balancer Scheme (e.g. <code>internet-facing</code> or <code>internal</code>). Default is set to <code>internet-facing</code>. Use <code>internal</code> as the load balancer scheme if you want the load balancer to be accessible only within your VPC. See <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load balancer scheme</a> in the AWS documentation</p>
 </blockquote>
 </li>
+</ol>
+<p>As of Kubeflow 1.7, there are two options to configure Amazon S3 as an artifact store for pipelines. Choose one of the following options:</p>
+<blockquote>
+<p>Note: IRSA is only supported in KFPv1, if you plan to use KFPv2, choose the IAM User option. IRSA support for KFPv2 will be added in the next release.</p>
+</blockquote>
+<ul>
+<li>
+<p>Option 1 - IRSA (Recommended): IAM Role for Service Account (IRSA) which allows the use of AWS IAM permission boundaries at the Kubernetes pod level. A Kubernetes service account (SA) is associated with an IAM role with a role policy that scopes the IAM permissions (e.g. S3 read/write access, etc.). When a pod in the SA namespace is annotated with the SA name, EKS injects the IAM role ARN and a token is used to get the credentials so that the pod can make requests to AWS services within the scope of the role policy associated with the IRSA.
+For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">Amazon EKS IAM roles for service accounts</a>.</p>
+</li>
+<li>
+<p>Option 2 - IAM User (Deprecated):
+<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi">Create an IAM user</a> with permissions to get bucket locations and allow read and write access to objects in an S3 bucket where you want to store the Kubeflow artifacts. Take note of the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY of the IAM user that you created to use in the following step, which will be referenced as <code>minio_aws_access_key_id</code> and <code>minio_aws_secret_access_key</code> respectively.</p>
+</li>
+</ul>
+<ol>
 <li>
 <p>Export your desired PIPELINE_S3_CREDENTIAL_OPTION specific values
 
@@ -688,7 +691,7 @@ For more information, see <a href="https://docs.aws.amazon.com/eks/latest/usergu
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 20, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/1f7806b28a662e858ae6a8cffeacd5e814f274de">flip order to emphasize that irsa is default (1f7806b)</a>
+  Last modified April 21, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/8214b981a989917a5c636ea8e10da6100c77ed57">revise to comments (8214b98)</a>
 </div>
 
 </div>

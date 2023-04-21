@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/surajkota.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito-rds-s3\/guide\/",
-      "wordCount" : "403",
+      "wordCount" : "411",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://surajkota.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-04-20T13:16:58-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2023-04-21T09:30:54-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Manifest Deployment Guide">
 <meta itemprop="description" content="Deploying Kubeflow with Amazon Cognito, RDS and S3">
-<meta itemprop="dateModified" content="2023-04-20T13:16:58-07:00" />
-<meta itemprop="wordCount" content="403">
+<meta itemprop="dateModified" content="2023-04-21T09:30:54-07:00" />
+<meta itemprop="wordCount" content="411">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manifest Deployment Guide"/>
 <meta name="twitter:description" content="Deploying Kubeflow with Amazon Cognito, RDS and S3"/>
@@ -501,9 +501,7 @@
 <li>Create an EKS cluster</li>
 <li>Create an S3 Bucket</li>
 <li>Create an RDS Instance</li>
-</ol>
-<!-- For old credentials method should still read for RDS and S3 -->
-<ol start="6">
+<li>Configure AWS Secrets or IAM Role for S3</li>
 <li>Configure AWS Secrets for RDS</li>
 <li>Install AWS Secrets and Kubernetes Secrets Store CSI driver</li>
 <li>Configure an RDS endpoint and an S3 bucket name for Kubeflow Pipelines</li>
@@ -723,7 +721,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 20, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/1f7806b28a662e858ae6a8cffeacd5e814f274de">flip order to emphasize that irsa is default (1f7806b)</a>
+  Last modified April 21, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/8214b981a989917a5c636ea8e10da6100c77ed57">revise to comments (8214b98)</a>
 </div>
 
 </div>
